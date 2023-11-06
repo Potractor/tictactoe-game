@@ -4,9 +4,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <div>
-          <button>click me please</button>
-        </div>
+        <Board />
       </div>
     </>
   );

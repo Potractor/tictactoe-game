@@ -1,11 +1,14 @@
-const Message = ({ square, winner, isXNext }) => {
+const Message = ({ gamingBoard, winner }) => {
+  const square = gamingBoard.squares;
+  const isXNext = gamingBoard.isXNext;
+  console.log(square, isXNext);
   const nextplayer = isXNext ? "X" : "O";
   const noMovesLeft = square.every((sqaurevalue) => sqaurevalue !== null);
   const renderStatusMessage = () => {
     if (winner)
       return (
         <>
-          winner is
+          Winner is &nbsp;
           <span className={isXNext ? "text-orange" : "text-green"}>
             {winner}
           </span>
@@ -14,7 +17,7 @@ const Message = ({ square, winner, isXNext }) => {
     if (!winner && !noMovesLeft)
       return (
         <>
-          nextplayer is
+          Nextplayer is &nbsp;
           <span className={isXNext ? "text-green" : "text-orange"}>
             {nextplayer}
           </span>
